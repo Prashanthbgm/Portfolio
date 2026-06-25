@@ -90,12 +90,7 @@ function Skills() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="
-            text-center
-            text-5xl
-            font-bold
-            mb-6
-          "
+          className="text-center text-4xl sm:text-5xl font-bold mb-6"
         >
           Tech Stack
         </motion.h2>
@@ -104,13 +99,7 @@ function Skills() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="
-            text-center
-            text-gray-400
-            max-w-2xl
-            mx-auto
-            mb-20
-          "
+          className="text-center text-gray-400 max-w-2xl mx-auto mb-20"
         >
           Building scalable web applications,
           intelligent systems, APIs, and mobile
@@ -119,14 +108,7 @@ function Skills() {
 
         {/* Grid */}
 
-        <div
-          className="
-            grid
-            md:grid-cols-2
-            lg:grid-cols-3
-            gap-8
-          "
-        >
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
           {skills.map((group, index) => (
             <motion.div
               key={index}
@@ -145,25 +127,7 @@ function Skills() {
               whileHover={{
                 y: -10,
               }}
-              className="
-                group
-
-                p-6
-                rounded-3xl
-
-                bg-white/5
-                backdrop-blur-xl
-
-                border
-                border-white/10
-
-                hover:border-purple-500/50
-
-                transition-all
-                duration-300
-
-                hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]
-              "
+              className="group rounded-3xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]"
             >
               <div className="flex items-center gap-3 mb-6">
 

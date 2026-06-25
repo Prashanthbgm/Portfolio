@@ -44,25 +44,12 @@ function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="
-            text-4xl
-            lg:text-5xl
-            font-bold
-            text-center
-            mb-20
-          "
+          className="text-center text-3xl sm:text-4xl font-bold mb-16"
         >
           About Me
         </motion.h2>
 
-        <div
-          className="
-            grid
-            lg:grid-cols-2
-            gap-20
-            items-center
-          "
-        >
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
 
           {/* LEFT CARD */}
 
@@ -70,18 +57,9 @@ function About() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="
-              rounded-3xl
-              p-8
-
-              bg-white/5
-              backdrop-blur-xl
-
-              border
-              border-white/10
-            "
+            className="rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 p-5 sm:p-8"
           >
-            <h3 className="text-3xl font-bold mb-6">
+            <h3 className="text-2xl font-bold mb-5 text-center lg:text-left">
               Prashanth M
             </h3>
 
@@ -95,33 +73,14 @@ function About() {
               applications and modern web experiences.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-
-              <span className="px-4 py-2 rounded-full bg-purple-500/20">
-                MERN
-              </span>
-
-              <span className="px-4 py-2 rounded-full bg-purple-500/20">
-                Python
-              </span>
-
-              <span className="px-4 py-2 rounded-full bg-purple-500/20">
-                AI / ML
-              </span>
-
-              <span className="px-4 py-2 rounded-full bg-purple-500/20">
-                Node.js
-              </span>
-
-              <span className="px-4 py-2 rounded-full bg-purple-500/20">
-                MongoDB
-              </span>
-            <span className="px-4 py-2 rounded-full bg-purple-500/20">
-                Django
-              </span>
-              <span className="px-4 py-2 rounded-full bg-purple-500/20">
-                Postgresql
-              </span>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm sm:justify-start">
+              <span className="rounded-full bg-purple-500/20 px-4 py-2">MERN</span>
+              <span className="rounded-full bg-purple-500/20 px-4 py-2">Python</span>
+              <span className="rounded-full bg-purple-500/20 px-4 py-2">AI / ML</span>
+              <span className="rounded-full bg-purple-500/20 px-4 py-2">Node.js</span>
+              <span className="rounded-full bg-purple-500/20 px-4 py-2">MongoDB</span>
+              <span className="rounded-full bg-purple-500/20 px-4 py-2">Django</span>
+              <span className="rounded-full bg-purple-500/20 px-4 py-2">Postgresql</span>
             </div>
 
           </motion.div>
@@ -133,44 +92,13 @@ function About() {
             {timeline.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{
-                  opacity: 0,
-                  x: 50,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.2,
-                }}
-                className="
-                  flex
-                  gap-10
-                "
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="flex flex-col gap-4 sm:flex-row sm:items-start"
               >
-
-                <div
-                  className="
-                    min-w-[80px]
-                    text-purple-400
-                    font-bold
-                  "
-                >
-                  {item.year}
-                </div>
-
-                <div
-                  className="
-                    flex-1
-                    border-l
-                    border-purple-500/30
-                    pl-6
-                  "
-                >
-                  {item.title}
-                </div>
+                <div className="w-full sm:w-[110px] text-purple-400 font-bold">{item.year}</div>
+                <div className="flex-1 border-l border-purple-500/30 pl-0 sm:pl-6">{item.title}</div>
 
               </motion.div>
             ))}

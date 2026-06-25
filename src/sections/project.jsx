@@ -6,7 +6,6 @@ function Projects() {
       title: "Agrishayak",
       description:
         "AI-powered agriculture platform that helps farmers make data-driven decisions using crop recommendation, disease detection and market intelligence.",
-
       features: [
         "Crop Recommendation System",
         "Plant Disease Detection",
@@ -14,21 +13,14 @@ function Projects() {
         "Weather Integration",
         "Machine Learning Models",
       ],
-
-      tech: [
-        "React",
-        "Flask",
-        "Python",
-        "TensorFlow",
-        "MongoDB",
-      ],
+      tech: ["React", "Flask", "Python", "TensorFlow", "MongoDB"],
+      sourceLink: "https://github.com/Prashanthbgm/agrishayak",
+      demoLink: "https://agrishayak.example.com",
     },
-
     {
       title: "BlinkSit",
       description:
         "Quick-commerce grocery delivery platform inspired by Blinkit, providing product discovery, cart management, admin control and order processing.",
-
       features: [
         "Product Management",
         "Shopping Cart",
@@ -36,14 +28,9 @@ function Projects() {
         "Order Management",
         "Location-Based Delivery",
       ],
-
-      tech: [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "JWT",
-      ],
+      tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+      sourceLink: "https://github.com/Prashanthbgm/blinksit",
+      demoLink: "https://blinksit.example.com",
     },
   ];
 
@@ -65,12 +52,7 @@ function Projects() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="
-            text-center
-            text-5xl
-            font-bold
-            mb-20
-          "
+          className="text-center text-3xl sm:text-4xl font-bold mb-16"
         >
           Featured Projects
         </motion.h2>
@@ -80,54 +62,14 @@ function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-              className="
-                grid
-                lg:grid-cols-2
-                gap-10
-
-                rounded-3xl
-                p-8
-
-                bg-white/5
-                backdrop-blur-xl
-
-                border
-                border-white/10
-
-                hover:border-purple-500/40
-
-                transition-all
-              "
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid gap-10 rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition-all hover:border-purple-500/40 lg:grid-cols-2"
             >
               {/* Image Side */}
 
-              <div
-                className="
-                  h-[300px]
-                  rounded-2xl
-
-                  bg-gradient-to-br
-                  from-purple-500/20
-                  to-blue-500/20
-
-                  flex
-                  items-center
-                  justify-center
-
-                  text-gray-400
-                "
-              >
+              <div className="h-48 rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center text-gray-400 sm:h-64 lg:h-[320px]">
                 Project Screenshot
               </div>
 
@@ -184,31 +126,33 @@ function Projects() {
 
                 {/* Tech Stack */}
 
-                <div
-                  className="
-                    flex
-                    flex-wrap
-                    gap-3
-                  "
+<div className="flex flex-wrap gap-3 mb-6">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-purple-500/20 bg-purple-500/10 px-4 py-2 text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href={project.sourceLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-purple-600 sm:w-auto"
                 >
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="
-                        px-4
-                        py-2
-
-                        rounded-full
-
-                        bg-purple-500/10
-
-                        border
-                        border-purple-500/20
-                      "
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  View Code
+                </a>
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-2xl border border-white/20 bg-transparent px-5 py-3 text-sm font-semibold text-white transition hover:border-purple-400 sm:w-auto"
+                >
+                  Live Demo
+                </a>
                 </div>
 
               </div>

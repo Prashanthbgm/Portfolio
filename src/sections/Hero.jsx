@@ -16,29 +16,29 @@ function Hero() {
 
           {/* LEFT SIDE */}
 
-          <div className="space-y-6 sm:space-y-7">
-            <div className="inline-flex items-center rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-300 sm:px-5 sm:py-2.5">
+          <div className="space-y-5 sm:space-y-6 mx-auto max-w-xl items-center text-center lg:mx-0 lg:items-start lg:text-left">
+            <div className="inline-flex items-center rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1.5 text-xs text-purple-300 sm:px-4 sm:py-2 sm:text-sm">
               AI • BACKEND • FULL STACK
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-6xl">
                 PRASHANTH M
               </h1>
-              <h2 className="text-lg font-medium text-gray-300 sm:text-xl lg:text-2xl">
+              <h2 className="text-sm font-medium text-gray-300 sm:text-base lg:text-2xl">
                 Full Stack Engineer | Backend Engineer | AI Engineer
               </h2>
             </div>
 
-            <p className="text-2xl font-semibold text-purple-400 sm:text-3xl">
+            <p className="text-lg font-semibold text-purple-400 sm:text-xl lg:text-2xl">
               AI / ML Enthusiast
             </p>
 
-            <p className="max-w-xl text-gray-400 leading-relaxed text-base sm:text-lg">
+            <p className="max-w-lg text-gray-400 leading-relaxed text-sm sm:text-base">
               I build intelligent systems, AI-powered applications and modern digital experiences using MERN, Python and Machine Learning.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="https://github.com/Prashanthbgm"
                 target="_blank"
@@ -58,11 +58,11 @@ function Hero() {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex items-center justify-center">
-            <div className="relative flex h-[420px] w-full max-w-[620px] items-center justify-center sm:h-[520px] lg:h-[650px]">
-              <div className="absolute inset-0 m-auto h-[240px] w-[240px] rounded-full border border-white/10 sm:h-[300px] sm:w-[300px] lg:h-[350px] lg:w-[350px]" />
-              <div className="absolute inset-0 m-auto h-[320px] w-[320px] rounded-full border border-white/10 sm:h-[400px] sm:w-[400px] lg:h-[470px] lg:w-[470px]" />
-              <div className="absolute inset-0 m-auto h-[380px] w-[380px] rounded-full border border-white/10 sm:h-[480px] sm:w-[480px] lg:h-[600px] lg:w-[600px]" />
+          <div className="flex items-center justify-center pt-10 lg:pt-0">
+            <div className="relative flex h-72 w-full max-w-[340px] items-center justify-center sm:h-80 sm:max-w-[420px] md:h-[460px] lg:h-[560px] lg:max-w-[520px]">
+              <div className="absolute inset-0 m-auto h-40 w-40 rounded-full border border-white/10 sm:h-48 sm:w-48 lg:h-[280px] lg:w-[280px]" />
+              <div className="absolute inset-0 m-auto h-52 w-52 rounded-full border border-white/10 sm:h-64 sm:w-64 lg:h-[380px] lg:w-[380px]" />
+              <div className="absolute inset-0 m-auto h-64 w-64 rounded-full border border-white/10 sm:h-72 sm:w-72 lg:h-[520px] lg:w-[520px]" />
 
               <Floatingtags />
               <Globe />

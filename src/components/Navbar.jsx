@@ -1,18 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import resume from "../assets/Prash_29.pdf";
 
+const navLinks = ["Home", "About", "Skills", "Projects", "Contact"];
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  const navLinks = [
-    "Home",
-    "About",
-    "Skills",
-    "Projects",
-    "Contact",
-  ];
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.toLowerCase());
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+      const currentSection = sectionIds.reduce((current, sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (!section) return current;
+        if (scrollPosition >= section.offsetTop) {
+          return sectionId;
+        }
+        return current;
+      }, "home");
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 flex justify-center pt-4 md:pt-6">
@@ -59,31 +74,19 @@ function Navbar() {
         {/* Desktop Navigation */}
 
         <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link}>
-              <a
-                href={`#${link.toLowerCase()}`}
-                className="
-                  relative
-                  text-gray-300
-                  transition-all
-                  duration-300
-                  hover:text-purple-400
-                  after:absolute
-                  after:left-0
-                  after:-bottom-1
-                  after:h-[2px]
-                  after:w-0
-                  after:bg-purple-400
-                  after:transition-all
-                  after:duration-300
-                  hover:after:w-full
-                "
-              >
-                {link}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.toLowerCase();
+            return (
+              <li key={link}>
+                <a
+                  href={`#${link.toLowerCase()}`}
+                  className={`relative transition-all duration-300 ${isActive ? "text-purple-400 after:w-full" : "text-gray-300 hover:text-purple-400"} after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-purple-400 after:transition-all after:duration-300`}
+                >
+                  {link}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Desktop Resume Button */}

@@ -37,9 +37,11 @@ export default function Floatingtags() {
     ];
   }, [isMobile]);
 
+  const visibleTags = isMobile ? tags.slice(0, 4) : tags;
+
   return (
     <>
-      {tags.map((tag) => (
+      {visibleTags.map((tag) => (
         <Orbittag
           key={tag.text}
           icon={tag.icon}
